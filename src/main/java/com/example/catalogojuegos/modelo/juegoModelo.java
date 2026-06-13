@@ -1,5 +1,6 @@
 package com.example.catalogojuegos.modelo;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -9,19 +10,27 @@ public class juegoModelo {
     @Id
     private String id;
 
+    @JsonProperty("rating")
     private float calificaciones;
+
+    @JsonProperty("nombre")
     private String nombreJuego;
+
     private String genero;
+
+    @JsonProperty("anio")
     private int anioLanzamiento;
+
+    @JsonProperty("disponible")
     private boolean activo;
+
     private String descripcion;
     private String plataforma;
     private String desarrolladora;
 
-    // IMAGEN DEL JUEGO
+    @JsonProperty("imagenUrl")
     private String imagen;
 
-    // DATOS DEL ALQUILER
     private String nombreCliente;
     private String documentoCliente;
     private String fechaAlquiler;
@@ -105,8 +114,6 @@ public class juegoModelo {
         this.desarrolladora = desarrolladora;
     }
 
-    // GETTER Y SETTER DE IMAGEN
-
     public String getImagen() {
         return imagen;
     }
@@ -146,5 +153,4 @@ public class juegoModelo {
     public void setDiasAlquiler(int diasAlquiler) {
         this.diasAlquiler = diasAlquiler;
     }
-
 }
