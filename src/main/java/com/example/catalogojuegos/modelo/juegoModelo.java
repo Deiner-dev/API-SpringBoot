@@ -1,5 +1,6 @@
 package com.example.catalogojuegos.modelo;
 
+import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -11,17 +12,21 @@ public class juegoModelo {
     private String id;
 
     @JsonProperty("rating")
+    @JsonAlias({"calificaciones", "rating"})
     private float calificaciones;
 
     @JsonProperty("nombre")
+    @JsonAlias({"nombreJuego", "nombre"})
     private String nombreJuego;
 
     private String genero;
 
     @JsonProperty("anio")
+    @JsonAlias({"anioLanzamiento", "anio"})
     private int anioLanzamiento;
 
     @JsonProperty("disponible")
+    @JsonAlias({"activo", "disponible"})
     private boolean activo;
 
     private String descripcion;
@@ -29,12 +34,14 @@ public class juegoModelo {
     private String desarrolladora;
 
     @JsonProperty("imagenUrl")
+    @JsonAlias({"imagen", "imagenUrl"})
     private String imagen;
 
     private String nombreCliente;
     private String documentoCliente;
     private String fechaAlquiler;
     private int diasAlquiler;
+
 
     // Constructor vacío
     public juegoModelo() {
