@@ -79,4 +79,10 @@ public class juegoControlador {
 
         return "¡Juego no encontrado!";
     }
+
+    // LISTAR ALQUILADOS
+    @GetMapping("/alquilados")
+    public List<juegoModelo> obtenerJuegosAlquilados() {
+        return juegoServicio.obtenerJuegosAlquilados();
+    }
 }

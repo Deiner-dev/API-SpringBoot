@@ -144,4 +144,9 @@ public class juegoServicio {
         return false;
     }
 
+    // LISTAR ALQUILADOS
+    public List<juegoModelo> obtenerJuegosAlquilados() {
+        return juegoRepositorio.findByActivoFalse();
+    }
+
 }
